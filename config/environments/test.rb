@@ -1,7 +1,7 @@
 Revs::Application.configure do
 
   config.eager_load = false
-  
+
   # Settings specified here will take precedence over those in config/application.rb
   config.exception_error_page = false # show a friendly 500 error page if true
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
@@ -35,11 +35,8 @@ Revs::Application.configure do
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
 
-  # Revs App Configuration  
+  # Revs App Configuration
   config.simulate_sunet_user = "sunetuser" # SET TO BLANK OR FALSE IN PRODUCTION (it should be ignored in production anyway) if this has a value, then this will simulate you being logged in as a sunet user
-  config.purl_plugin_server = "test"
-  config.purl_plugin_location = "//image-viewer.stanford.edu/assets/purl_embed_jquery_plugin.js"
-  config.purl = "//purl.stanford.edu"
   config.restricted_beta = false # if set to true, then only beta users (and sunet users) can view the site
   config.use_editstore = true # if set to true, then all changes will be saved to editstore database (SHOULD BE TRUE IN PRODUCTION AND TEST!)
   config.show_galleries_in_nav = true # if set to true, then galleries is shown in top navigation
