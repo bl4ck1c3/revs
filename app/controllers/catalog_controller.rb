@@ -308,7 +308,10 @@ class CatalogController < ApplicationController
     config.add_facet_field 'people_ssim', :label => "People", :limit => 25, :index_pagination=>true
     config.add_facet_field 'venue_ssi', :label => "Venue", :limit => 25, :index_pagination=>true
     config.add_facet_field 'event_ssi', :label => "Event", :limit => 25, :index_pagination=>true
-
+    config.add_facet_field 'available_reproduction', :label => 'Available for reproduction', :query => {
+       :weeks_1 => { :label => 'yes', :fq => "-inst_notes_tsi:\"*not available*\"" },
+       :months_1 => { :label => 'no', :fq => "inst_notes_tsi:\"*not available*\"" },
+    }
     config.add_facet_field 'timestamp', :label => 'Added recently', :query => {
        :weeks_1 => { :label => 'within last week', :fq => "timestamp:[\"#{show_as_timestamp(1.week.ago)}\" TO *]" },
        :months_1 => { :label => 'within last month', :fq => "timestamp:[\"#{show_as_timestamp(1.month.ago)}\" TO *]" },
