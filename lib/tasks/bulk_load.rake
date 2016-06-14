@@ -801,8 +801,8 @@ namespace :revs do
 
   desc "Bulk hide or show images from a given collection"
   task :change_visibility_collection, [:collection_name, :visibility_value] => :environment do |t, args|
-    # call with RAILS_ENV=production rake revs:change_visibility_collection["Albert R. Bochroch Photographic Archive",1] to show all images in the collection; note the collection itself is unaffected
-    # call with RAILS_ENV=production rake revs:change_visibility_collection["Albert R. Bochroch Photographic Archive",0] to hide all images in the collection; note the collection itself is unaffected
+    # call with RAILS_ENV=production rake revs:change_visibility_collection["Albert R. Bochroch Photographic Archive",1] to show all images in the collection; including the collection itself
+    # call with RAILS_ENV=production rake revs:change_visibility_collection["Albert R. Bochroch Photographic Archive",0] to hide all images in the collection; including the collection itself
 
     Revs::Application.config.use_editstore = false
 
